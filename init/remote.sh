@@ -32,14 +32,17 @@ echo -n "The current directory should be:"; echo $dir2
 ls
 cd $bashdir
 echo "Git Pull: BASH"
+git clone git@github.com:akhilsadam/PlasticPET-TACC-BASH.git
 git pull origin master -f
 read -p "Press any key to resume ..."
 cd $srcdir
 echo "Git Pull: SRC"
+#git clone git@github.com:akhilsadam/PlasticPET.git
 git pull origin master -f
 read -p "Press any key to resume ..."
 cd $anlydir
 echo "Git Pull: ANLY"
+#git clone git@github.com:akhilsadam/PlasticPET-ANLY.git
 git pull origin master -f
 read -p "Press any key to resume ..."
 echo "Build"
