@@ -1,0 +1,13 @@
+Steps to use Geant4:
+
+1. Enter the "sharedir" mentioned in the sourceAll.sh: /work2/07752/as_tacc/utklshare/
+
+2. Copy the commented lines to a notepad or bash script. (These lines are bracketed by the <<COMMENT and COMMENT symbols.)
+
+3. Run this script in your build directory, replacing "directory to source" with your source code directory.
+
+4. Once this is complete, run your compiled executable.
+
+
+//Note to Installer:
+This file should be placed under utklshare/
