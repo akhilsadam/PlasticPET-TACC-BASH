@@ -5,5 +5,5 @@ cd bash
 git add .
 git commit -a -m "Update Bash"
 git push origin master
-scp bash/init/remote.sh as_tacc@stampede2.tacc.utexas.edu:/work2/07752/as_tacc/Desktop/PlasticPET/bash/init/remote.sh
+scp init/remote.sh as_tacc@stampede2.tacc.utexas.edu:/work2/07752/as_tacc/Desktop/PlasticPET/bash/init/remote.sh
 ssh -X  -t -t as_tacc@stampede2.tacc.utexas.edu "bash source /work2/07752/as_tacc/Desktop/PlasticPET/bash/init/remote.sh & xterm ; fg"
