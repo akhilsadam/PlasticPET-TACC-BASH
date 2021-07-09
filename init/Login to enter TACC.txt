@@ -1,0 +1,1 @@
+Note that the login script should be placed outside the bash folder, next to the ssh-keys.
