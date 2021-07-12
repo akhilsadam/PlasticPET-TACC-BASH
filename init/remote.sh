@@ -6,12 +6,11 @@ module load git
 module load autotools
 module load xalt
 module load TACC
-module load intel
-module load libfabric
 module load impi/18.0.2
+module load intel/18.0.2
+module load libfabric
 module load python3/3.7.0
 module load cmake/3.16.1
-module load intel/18.0.2
 module save
 echo "- Saved Modules."
 module list
