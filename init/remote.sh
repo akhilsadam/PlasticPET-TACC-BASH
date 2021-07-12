@@ -16,7 +16,7 @@ module load mvapich2/2.3.4
 module save
 echo "- Saved Modules."
 module list
-export sharedir=/work2/07752/as_tacc/utklshare/
+export sharedir=/work2/07752/as_tacc/utklshare
 source $sharedir/sourceAll.sh
 export dir2=$PWD/../..
 export srcdir=$dir2/src/B3a
@@ -51,11 +51,10 @@ make clean
 cmake -DCMAKE_C_COMPILER=icc \
     -DCMAKE_CXX_COMPILER=icpc \
     -DCMAKE_PREFIX_PATH=$sharedir/geant4/geant4-install \
+    -DROOT_INCLUDE_DIRS=$sharedir/root/include \
     /home1/07752/as_tacc/Desktop/PlasticPET/src
 make -j48
-<<COMMENT
-echo "Run"
-cd $rundir
-./exampleB3a
-read
-COMMENT
+# echo "Run"
+# cd $rundir
+# ./exampleB3a
+# read
