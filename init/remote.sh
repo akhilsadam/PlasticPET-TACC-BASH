@@ -15,6 +15,7 @@ module save
 echo "- Saved Modules."
 module list
 export sharedir=/work2/07752/as_tacc/utklshare
+export TACC=TRUE
 source $sharedir/sourceAll.sh
 export dir2=$PWD/../..
 export srcdir=$dir2/src/B3a
