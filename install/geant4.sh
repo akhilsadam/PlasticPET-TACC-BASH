@@ -29,6 +29,20 @@ cd ../../
 
 <<COMMENT
 mkdir gcc && cd gcc
+mkdir install-9
+mkdir build-9
+wget http://mirrors.concertpass.com/gcc/releases/gcc-9.3.0/gcc-9.3.0.tar.xz
+tar -xvf gcc-9.3.0.tar.xz
+cd gcc-9.3.0
+./contrib/download_prerequisites
+cd ../build-9
+$PWD/../gcc-9.3.0/configure --prefix=$STOCKYARD/utklshare/gcc/install-9 --enable-languages=c,c++,fortran,go --enable-multilib
+make -j48
+make install
+COMMENT
+
+<<COMMENT
+mkdir gcc && cd gcc
 mkdir install
 mkdir build
 wget http://mirrors.concertpass.com/gcc/releases/gcc-10.1.0/gcc-10.1.0.tar.xz
