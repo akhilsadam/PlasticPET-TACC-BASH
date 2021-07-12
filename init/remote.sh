@@ -25,9 +25,8 @@ export rundir=$dir2/build/B3a
 export anlydir=$dir2/analyze
 export bashdir=$dir2/bash
 export mldir=$dir2/analyze/tools/ML/Models
-export pltdir=$dir2/PlasticPET/analyze/plots
+export pltdir=$dir2/analyze/plots
 echo -n "The current directory should be:"; echo $dir2
-ls
 cd $bashdir
 echo "Git Pull: BASH"
 #git clone git@github.com:akhilsadam/PlasticPET-TACC-BASH.git
