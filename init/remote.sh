@@ -51,7 +51,7 @@ cmake -DCMAKE_C_COMPILER=icc \
     -DCMAKE_PREFIX_PATH=$sharedir/geant4/geant4-install \
     -DROOT_INCLUDE_DIRS=$sharedir/root/include \
     /home1/07752/as_tacc/Desktop/PlasticPET/src
-make -j48
+make CXX_FLAGS=-DTACC=1 -j49
 # echo "Run"
 # cd $rundir
 # ./exampleB3a
