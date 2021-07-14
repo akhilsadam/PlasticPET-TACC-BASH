@@ -16,7 +16,7 @@ echo "- Saved Modules."
 module list
 export sharedir=/work2/07752/as_tacc/utklshare
 export TACC=TRUE
-export dir2= . /home1/07752/as_tacc/Desktop/PlasticPET
+export dir2=/home1/07752/as_tacc/Desktop/PlasticPET
 source $sharedir/sourceAll.sh
 export srcdir=$dir2/src/B3a
 export ccdir=$srcdir/src
