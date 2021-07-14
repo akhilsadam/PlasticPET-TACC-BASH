@@ -3,6 +3,8 @@
 export sharedir=/work2/07752/as_tacc/utklshare
 export PATH=$PATH:$sharedir/root/bin/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$sharedir/lib/usr/lib64/
+# export QT_QPA_PLATFORM_PLUGIN_PATH=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/src/plugins/platforms/
+# export QT_QPA_PLATFORM=vnc
 source $sharedir/root/bin/thisroot.sh
 echo "Sourced ROOT."
 export PATH=$PATH:$sharedir/geant4/geant4-install/bin/

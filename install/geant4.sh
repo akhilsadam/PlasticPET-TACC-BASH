@@ -71,6 +71,12 @@ gmake -j16
 cd ../../
 #cmake --std=c++17 --build . (run prior to previous 2 cmds)
 
+cd lib
+yumdownloader libxcb
+rpm2cpio libxcb-1.13-1.el7.x86_64.rpm | cpio -id
+cd ..
+
+
 
 cd geant4/geant4-build/
 
