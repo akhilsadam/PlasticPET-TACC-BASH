@@ -55,21 +55,22 @@ make -j8
 make install
 COMMENT
 
-mkdir qt
-cd qt
-mkdir installdir
-mkdir build
-wget https://download.qt.io/official_releases/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz
-tar -xvf qt-everywhere-src-5.15.2.tar.xz
-#cd qt-everywhere-src-6.1.2
-# does not work due to symlinks
-cd /work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2
-./configure -release -opensource -nomake examples -nomake tests \
--skip qtdocgallery -confirm-license -opengl desktop \
--platform linux-g++-64 -prefix $PWD/qtbase
-gmake -j16
-cd ../../
-#cmake --std=c++17 --build . (run prior to previous 2 cmds)
+# mkdir qt
+# cd qt
+# mkdir installdir
+# mkdir build
+# wget https://download.qt.io/official_releases/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz
+# tar -xvf qt-everywhere-src-5.15.2.tar.xz
+# #cd qt-everywhere-src-6.1.2
+# # does not work due to symlinks
+# cd /work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2
+# ./configure -release -opensource -nomake examples -nomake tests \
+# -skip qtdocgallery -confirm-license -opengl desktop \
+# -platform linux-g++-64 -prefix $PWD/qtbase
+# gmake -j16
+# cd ../../
+# ### cmake --std=c++17 --build . (run prior to previous 2 cmds)
+# ### No need for QT; there exists a QT5 module!
 
 cd lib
 yumdownloader libxcb
@@ -91,6 +92,7 @@ cmake   \
     -DQt5Widgets_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5Widgets/ \
     -DQt5OpenGL_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5OpenGL/ \
     -DQt5PrintSupport_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5PrintSupport/ \
+    -DGEANT4_BUILD_CXXSTD=17 \
 	-DCMAKE_INSTALL_PREFIX=../geant4-install \
 	-DGEANT4_INSTALL_DATADIR=geant4-data \
 	-DGEANT4_BUILD_MULTITHREADED=ON \

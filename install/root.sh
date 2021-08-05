@@ -8,6 +8,10 @@ tar -xzvf root_v6.24.02.Linux-centos7-x86_64-gcc4.8.tar.gz
 source root/bin/thisroot.sh # also available: thisroot.{csh,fish,bat}
 export PATH=$PATH:$STOCKYARD/utklshare/root/bin/
 
+#installing root from source! CXXSTD=17 and icpc compiler
+
+
+
 mkdir ../lib
 cd ../lib
 export PATH=$PATH:$PWD/

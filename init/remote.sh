@@ -11,6 +11,7 @@ module load intel/18.0.2
 module load libfabric
 module load python3/3.7.0
 module load cmake/3.16.1
+module load qt5
 module save
 echo "- Saved Modules."
 module list
