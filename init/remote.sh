@@ -4,14 +4,15 @@ ls
 echo "- Loading Modules..."
 module load git
 module load autotools
+module load cmake/3.16.1
 module load xalt
 module load TACC
-module load impi/18.0.2
-module load intel/18.0.2
-module load libfabric
-module load python3/3.7.0
-module load cmake/3.16.1
 module load qt5
+module load swr
+module load libfabric
+module load gcc/6.3.0
+module load impi/18.0.2
+module load python3/3.8.2
 module save
 echo "- Saved Modules."
 module list

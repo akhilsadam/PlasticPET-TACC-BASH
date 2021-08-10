@@ -3,12 +3,28 @@ cd $STOCKYARD/utklshare
 mkdir root
 cd root
 
-wget https://root.cern/download/root_v6.24.02.Linux-centos7-x86_64-gcc4.8.tar.gz
-tar -xzvf root_v6.24.02.Linux-centos7-x86_64-gcc4.8.tar.gz
-source root/bin/thisroot.sh # also available: thisroot.{csh,fish,bat}
+# wget https://root.cern/download/root_v6.24.02.Linux-centos7-x86_64-gcc4.8.tar.gz
+# tar -xzvf root_v6.24.02.Linux-centos7-x86_64-gcc4.8.tar.gz
+# source root/bin/thisroot.sh # also available: thisroot.{csh,fish,bat}
+# export PATH=$PATH:$STOCKYARD/utklshare/root/bin/
+
+wget https://root.cern/download/root_v6.24.02.source.tar.gz
+tar -xzvf root_v6.24.02.source.tar.gz
+cd root-6.24.02/
+mkdir ../build-root/ && cd ../build-root/
+
+cmake -DCMAKE_C_COMPILER=gcc \
+      -DCMAKE_CXX_COMPILER=g++ \
+      -DCMAKE_CXX_STANDARD=17 \
+      -Dgminimal=ON \
+      -DCMAKE_INSTALL_PREFIX=$STOCKYARD/utklshare/root \
+      ../root-6.24.02/ 
+
+make -j4
+make install
 export PATH=$PATH:$STOCKYARD/utklshare/root/bin/
 
-#installing root from source! CXXSTD=17 and icpc compiler
+#installing root from source! CXXSTD=17 and gcc compiler
 
 
 

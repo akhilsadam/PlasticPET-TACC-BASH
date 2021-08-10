@@ -19,12 +19,15 @@ mkdir installdir
 wget https://mirror.cogentco.com/pub/apache//xerces/c/3/sources/xerces-c-3.2.3.tar.gz
 tar -xzvf xerces-c-3.2.3.tar.gz
 cd xerces-c-3.2.3/
-./configure --disable-static CC=icc CXX=icpc CFLAGS=-O3 CXXFLAGS=-O3 --prefix=$STOCKYARD/utklshare/xercesc/installdir
+#./configure --disable-static CC=icc CXX=icpc CFLAGS=-O3 CXXFLAGS=-O3 --prefix=$STOCKYARD/utklshare/xercesc/installdir
+./configure --disable-static CC=gcc CXX=g++ CFLAGS=-O3 CXXFLAGS=-O3 --prefix=$STOCKYARD/utklshare/xercesc/installdir
 make -j8
 make install 
-export XercesC_LIBRARY=$STOCKYARD/utklshare/xercesc/installdir/lib
+export XercesC_LIBRARY=$STOCKYARD/utklshare/xercesc/installdir/lib/libxerces-c.so
 export XercesC_INCLUDE_DIR=$STOCKYARD/utklshare/xercesc/installdir/include
 export XercesC_VERSION=3.2.3
+export LD_LIBRARY_PATH=$STOCKYARD/utklshare/xercesc/installdir/lib:$LD_LIBRARY_PATH
+export LD_RUN_PATH=$XercesC_LIBRARY:$LD_RUN_PATH
 cd ../../
 
 <<COMMENT
@@ -80,10 +83,10 @@ cd ..
 
 
 cd geant4/geant4-build/
-
+# using gcc instead
 cmake   \
-	-DCMAKE_C_COMPILER=icc \
-	-DCMAKE_CXX_COMPILER=icpc \
+	-DCMAKE_C_COMPILER=gcc \
+	-DCMAKE_CXX_COMPILER=g++ \
 	-DCMAKE_CXX_FLAGS="-O3 -DNDEBUG -xCORE-AVX2 -axMIC-AVX512,CORE-AVX512 -w1 -Wno-non-virtual-dtor -Wpointer-arith -Wwrite-strings -fp-model precise" \
 	-DCMAKE_C_FLAGS="-O3 -DNDEBUG -xCORE-AVX2 -axMIC-AVX512,CORE-AVX512 -g3" \
     -DCMAKE_PREFIX_PATH=/work2/07752/as_tacc/utklshare/xercesc/installdir
