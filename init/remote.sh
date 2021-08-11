@@ -47,8 +47,8 @@ read -p "Press any key to resume ..."
 echo "Build"
 cd $blddir
 make clean
-cmake -DCMAKE_C_COMPILER=icc \
-    -DCMAKE_CXX_COMPILER=icpc \
+cmake -DCMAKE_C_COMPILER=gcc \
+    -DCMAKE_CXX_COMPILER=g++ \
     -DCMAKE_PREFIX_PATH=$sharedir/geant4/geant4-install \
     -DROOT_INCLUDE_DIRS=$sharedir/root/include \
     /home1/07752/as_tacc/Desktop/PlasticPET/src
