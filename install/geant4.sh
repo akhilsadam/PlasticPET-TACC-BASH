@@ -83,12 +83,15 @@ cd ..
 
 
 cd geant4/geant4-build/
+#	-DCMAKE_CXX_FLAGS="-O3 -DNDEBUG -xCORE-AVX2 -axMIC-AVX512,CORE-AVX512 -w1 -Wno-non-virtual-dtor -Wpointer-arith -Wwrite-strings -fp-model precise" \
+#   -DCMAKE_C_FLAGS="-O3 -DNDEBUG -xCORE-AVX2 -axMIC-AVX512,CORE-AVX512 -g3" \
+
 # using gcc instead
 cmake   \
 	-DCMAKE_C_COMPILER=gcc \
 	-DCMAKE_CXX_COMPILER=g++ \
-	-DCMAKE_CXX_FLAGS="-O3 -DNDEBUG -xCORE-AVX2 -axMIC-AVX512,CORE-AVX512 -w1 -Wno-non-virtual-dtor -Wpointer-arith -Wwrite-strings -fp-model precise" \
-	-DCMAKE_C_FLAGS="-O3 -DNDEBUG -xCORE-AVX2 -axMIC-AVX512,CORE-AVX512 -g3" \
+	-DCMAKE_CXX_FLAGS="-O3 -DNDEBUG -xCORE-AVX2 -w -Wno-non-virtual-dtor -Wpointer-arith -Wwrite-strings" \
+	-DCMAKE_C_FLAGS="-O3 -DNDEBUG -xCORE-AVX2 -g3" \
     -DCMAKE_PREFIX_PATH=/work2/07752/as_tacc/utklshare/xercesc/installdir
     -DQt5Core_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5Core/ \
     -DQt5Gui_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5Gui/ \
