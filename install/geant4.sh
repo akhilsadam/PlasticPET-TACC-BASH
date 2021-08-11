@@ -85,22 +85,23 @@ cd ..
 cd geant4/geant4-build/
 #	-DCMAKE_CXX_FLAGS="-O3 -DNDEBUG -xCORE-AVX2 -axMIC-AVX512,CORE-AVX512 -w1 -Wno-non-virtual-dtor -Wpointer-arith -Wwrite-strings -fp-model precise" \
 #   -DCMAKE_C_FLAGS="-O3 -DNDEBUG -xCORE-AVX2 -axMIC-AVX512,CORE-AVX512 -g3" \
-
+#    -DQt5Core_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5Core/ \
+    # -DQt5Gui_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5Gui/ \
+    # -DQt5Widgets_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5Widgets/ \
+    # -DQt5OpenGL_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5OpenGL/ \
+    # -DQt5PrintSupport_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5PrintSupport/ \
 # using gcc instead
 cmake   \
 	-DCMAKE_C_COMPILER=gcc \
 	-DCMAKE_CXX_COMPILER=g++ \
-	-DCMAKE_CXX_FLAGS="-O3 -DNDEBUG -xCORE-AVX2 -w -Wno-non-virtual-dtor -Wpointer-arith -Wwrite-strings" \
-	-DCMAKE_C_FLAGS="-O3 -DNDEBUG -xCORE-AVX2 -g3" \
-    -DCMAKE_PREFIX_PATH=/work2/07752/as_tacc/utklshare/xercesc/installdir
-    -DQt5Core_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5Core/ \
-    -DQt5Gui_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5Gui/ \
-    -DQt5Widgets_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5Widgets/ \
-    -DQt5OpenGL_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5OpenGL/ \
-    -DQt5PrintSupport_DIR=/work2/07752/as_tacc/utklshare/qt/qt-everywhere-src-5.15.2/qtbase/lib/cmake/Qt5PrintSupport/ \
+	-DCMAKE_CXX_FLAGS="-O3 -DNDEBUG" \
+	-DCMAKE_C_FLAGS="-O3 -DNDEBUG -g3" \
     -DGEANT4_BUILD_CXXSTD=17 \
 	-DCMAKE_INSTALL_PREFIX=../geant4-install \
 	-DGEANT4_INSTALL_DATADIR=geant4-data \
+    -DXercesC_LIBRARY=/work2/07752/as_tacc/utklshare/xercesc/installdir/lib/libxerces-c.so \
+    -DXercesC_INCLUDE_DIR=/work2/07752/as_tacc/utklshare/xercesc/installdir/include \
+    -DXercesC_VERSION=3.2.3 \
 	-DGEANT4_BUILD_MULTITHREADED=ON \
     -DGEANT4_INSTALL_DATA=ON \
     -DGEANT4_USE_GDML=ON \

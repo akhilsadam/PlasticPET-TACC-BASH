@@ -11,14 +11,14 @@ cd root
 wget https://root.cern/download/root_v6.24.02.source.tar.gz
 tar -xzvf root_v6.24.02.source.tar.gz
 cd root-6.24.02/
-mkdir ../build-root/ && cd ../build-root/
+mkdir build-root/ && cd build-root/
 
 cmake -DCMAKE_C_COMPILER=gcc \
       -DCMAKE_CXX_COMPILER=g++ \
       -DCMAKE_CXX_STANDARD=17 \
       -Dgminimal=ON \
-      -DCMAKE_INSTALL_PREFIX=$STOCKYARD/utklshare/root \
-      ../root-6.24.02/ 
+      -DCMAKE_INSTALL_PREFIX=/work/07752/as_tacc/utklshare/root \
+      ../ 
 
 make -j4
 make install
