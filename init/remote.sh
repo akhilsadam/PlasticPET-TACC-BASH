@@ -51,9 +51,11 @@ cmake -DCMAKE_C_COMPILER=gcc \
     -DCMAKE_CXX_COMPILER=g++ \
     -DCMAKE_PREFIX_PATH=$sharedir/geant4/geant4-install \
     -DROOT_INCLUDE_DIRS=$sharedir/root/include \
+    -DXercesC_LIBRARY=/work2/07752/as_tacc/utklshare/xercesc/installdir/lib/libxerces-c.so \
     /home1/07752/as_tacc/Desktop/PlasticPET/src
 make CXX_FLAGS=-DTACC=1 -j49
 # echo "Run"
 # cd $rundir
 # ./exampleB3a
 # read
+# idev -p normal -m 420
