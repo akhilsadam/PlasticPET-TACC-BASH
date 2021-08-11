@@ -24,7 +24,7 @@ make -j4
 make install
 export PATH=$PATH:$STOCKYARD/utklshare/root/bin/
 
-#installing root from source! CXXSTD=17 and gcc compiler
+#installing root from source! CXXSTD=17 and gcc compiler 9.1.0
 
 
 
