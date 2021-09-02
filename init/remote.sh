@@ -1,19 +1,19 @@
 #!/bin/bash
 # remote (on TACC)
 ls
-echo "- Loading Modules..."
-module load git
-module load autotools
-module load xalt
-module load TACC
-module load libfabric
-module load cmake/3.16.1
-module load qt5
-module load swr
-module load gcc/9.1.0
-module load python3/3.8.2
-module save
-echo "- Saved Modules."
+# echo "- Loading Modules..."
+# module load git
+# module load autotools
+# module load xalt
+# module load TACC
+# module load libfabric
+# module load cmake/3.16.1
+# module load qt5
+# module load swr
+# module load gcc/9.1.0
+# module load python3/3.8.2
+# module save
+# echo "- Saved Modules."
 module list
 export sharedir=/work2/07752/as_tacc/utklshare
 export TACC=TRUE
@@ -54,8 +54,10 @@ cmake -DCMAKE_C_COMPILER=gcc \
     -DXercesC_LIBRARY=/work2/07752/as_tacc/utklshare/xercesc/installdir/lib/libxerces-c.so \
     /home1/07752/as_tacc/Desktop/PlasticPET/src
 make CXX_FLAGS=-DTACC=1 -j49
-# echo "Run"
-# cd $rundir
-# ./exampleB3a
-# read
-# idev -p normal -m 420
+echo "Run"
+cd $rundir
+read
+idev -p skx-normal -m 420
+export OMP_NUM_THREADS=48
+cd $bashdir
+bash RunAll.sh

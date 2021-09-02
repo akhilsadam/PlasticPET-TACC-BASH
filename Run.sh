@@ -5,17 +5,14 @@ RunMake="${setup[2]}"
 #
 if [ ${RunMake} -gt 1 ]
 then
-    cd ../build
-    cmake -DCMAKE_C_COMPILER=icc \
-      -DCMAKE_CXX_COMPILER=icpc \
-      -DCMAKE_PREFIX_PATH=$sharedir/geant4/geant4-install \
-      ../src
+    cd $bashdir/../build
     make clean
-    make -j48
+    echo "make CXX_FLAGS=${args} -j8"
+    make CXX_FLAGS="${args}" -j8
     echo "Made Simulation"
     cd B3a
 else
-    cd ../build/B3a
+    cd $bashdir/../build/B3a
 fi  
 ls
 echo $RunEvents
@@ -26,5 +23,5 @@ echo $(cat temp.txt) > temp.txt
 ./exampleB3a < temp.txt
 echo "Completed Runs."
 cd ../../analyze
-python3 analyze.py
+python3 analyzeKNN.py
 echo "Analyzed Data"

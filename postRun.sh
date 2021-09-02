@@ -3,7 +3,7 @@ RunName="${setup[0]}"
 RunEvents="${setup[1]}"
 RunMake="${setup[2]}"
 #
-name=${RunName}
+name="${RunName}$Iteration"
 mkdir ../data/$name
 mv ../data/current/* ../data/$name
 mkdir ../plot/$name

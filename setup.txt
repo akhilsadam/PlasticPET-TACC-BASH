@@ -1,1 +1,1 @@
-test 20 2
+RSPointSource 80000 2
