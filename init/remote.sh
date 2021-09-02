@@ -57,7 +57,7 @@ make CXX_FLAGS=-DTACC=1 -j49
 echo "Run"
 cd $rundir
 read
-idev -p skx-normal -m 420
+idev -p skx-normal -m 420 -A PET
 export OMP_NUM_THREADS=48
 cd $bashdir
 bash RunAll.sh
