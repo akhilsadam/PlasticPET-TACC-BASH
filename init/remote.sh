@@ -58,6 +58,6 @@ echo "Run"
 cd $rundir
 read
 # idev -p skx-normal -m 420 -A PET
-# export OMP_NUM_THREADS=48
+# export OMP_NUM_THREADS=272
 # cd $bashdir
 # bash RunAll.sh
