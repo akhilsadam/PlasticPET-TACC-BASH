@@ -12,12 +12,13 @@ ls
 # module load swr
 # module load gcc/9.1.0
 # module load python3/3.8.2
+# module load python_cacher
 # module save
 # echo "- Saved Modules."
 module list
 export sharedir=/work2/07752/as_tacc/utklshare
 export TACC=TRUE
-export dir2=/home1/07752/as_tacc/Desktop/PlasticPET
+export dir2=/work2/07752/as_tacc/stampede2/PlasticPET
 source $sharedir/sourceAll.sh
 export srcdir=$dir2/src/B3a
 export ccdir=$srcdir/src
@@ -57,7 +58,7 @@ make CXX_FLAGS=-DTACC=1 -j49
 echo "Run"
 cd $rundir
 read
-# idev -p normal -m 420 -A PET
+# idev -p normal -m 420 -N 1 -n 68 -A PET
 # export OMP_NUM_THREADS=68
 # cd $bashdir
 # bash RunAll.sh
