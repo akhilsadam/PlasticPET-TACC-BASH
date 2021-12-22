@@ -33,7 +33,7 @@ echo -n "The current directory should be:"; echo $dir2
 cd $bashdir
 echo "Git Pull: BASH"
 #git clone git@github.com:akhilsadam/PlasticPET-TACC-BASH.git
-git pull origin master -f
+#git pull origin master -f
 read -p "Press any key to resume ..."
 cd $srcdir
 echo "Git Pull: SRC"
@@ -53,12 +53,14 @@ cmake -DCMAKE_C_COMPILER=gcc \
     -DCMAKE_PREFIX_PATH=$sharedir/geant4/geant4-install \
     -DROOT_INCLUDE_DIRS=$sharedir/root/include \
     -DXercesC_LIBRARY=/work2/07752/as_tacc/utklshare/xercesc/installdir/lib/libxerces-c.so \
-    /home1/07752/as_tacc/Desktop/PlasticPET/src
+    /work2/07752/as_tacc/stampede2/PlasticPET/src
 make CXX_FLAGS=-DTACC=1 -j49
 echo "Run"
 cd $rundir
 read
 # idev -p normal -m 420 -N 1 -n 68 -A PET
+# export MKL_MIC_ENABLE=1
 # export OMP_NUM_THREADS=68
+# export MIC_OMP_NUM_THREADS=272
 # cd $bashdir
 # bash RunAll.sh
